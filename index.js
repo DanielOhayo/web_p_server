@@ -19,8 +19,9 @@ app.use(express.json())
 })
 
 app.get('/db_request', (req, res) => {
-    const arrUsers = DB.get("user")
-    res.json(arrUsers) //send the array as a json file to client.
+    res.send("dani")
+    //const arrUsers = DB.get("user")
+    //res.json(arrUsers) //send the array as a json file to client.
 })
 
 //Lecturer Queries:
