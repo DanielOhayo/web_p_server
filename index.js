@@ -1,17 +1,17 @@
 const express = require("express"); //using package - express.
 const app = express();
-const port = 8080 //port for server.
+//const port = 8080 //port for server.
 const cors = require("cors");  //using package - cors.
-const JSONdb = require('simple-json-db'); //using data_base json.
-const DB = new JSONdb("DB.json"); //define new DB.
+//const JSONdb = require('simple-json-db'); //using data_base json.
+//const DB = new JSONdb("DB.json"); //define new DB.
 
 app.use(cors());
-app.use(express.static('client'))
-app.use(express.json())
+//app.use(express.static('client'))
+//app.use(express.json())
 
 //Login Queries:
 
-app.post('/get_user/', (req, res) => {
+/* app.post('/get_user/', (req, res) => {
     const { user_logged_in } = req.body
     if (!user_logged_in)
         return res.status(400).send({ status: 'failed' })
@@ -395,12 +395,12 @@ app.post('/student-submission-send/', (req, res) => {
     Object.values(selected_course_per_student)[hw_number][1] = new_link
     DB.sync(); //store the home works links in Data Base.
 })
+ */
 
-
-app.get('/ping',(req,res)=>{
+app.get('/',(req,res)=>{
     res.send('Hello, Dani!')
 })
 //Student
 
 //the server is listening on port:8080.
-app.listen(port, () => console.log("Listening on port 8080"));  
+app.listen(8080, () => console.log("Listening on port 8080"));  
