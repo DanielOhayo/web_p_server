@@ -1,13 +1,13 @@
 const express = require("express"); //using package - express.
 const app = express();
-//const port = 8080 //port for server.
+const port = 8080 //port for server.
 const cors = require("cors");  //using package - cors.
-//const JSONdb = require('simple-json-db'); //using data_base json.
-//const DB = new JSONdb("DB.json"); //define new DB.
+const JSONdb = require('simple-json-db'); //using data_base json.
+const DB = new JSONdb("DB.json"); //define new DB.
 
 app.use(cors());
-//app.use(express.static('client'))
-//app.use(express.json())
+app.use(express.static('client'))
+app.use(express.json())
 
 //Login Queries:
 
@@ -402,4 +402,4 @@ app.get('/',(req,res)=>{
 //Student
 
 //the server is listening on port:8080.
-app.listen(8080, () => console.log("Listening on port 8080"));  
+app.listen(port, () => console.log("Listening on port 8080"));  
