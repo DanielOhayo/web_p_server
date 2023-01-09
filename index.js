@@ -11,7 +11,7 @@ app.use(cors());
 
 //Login Queries:
 
-/* app.post('/get_user/', (req, res) => {
+ app.post('/get_user/', (req, res) => {
     const { user_logged_in } = req.body
     if (!user_logged_in)
         return res.status(400).send({ status: 'failed' })
@@ -395,7 +395,6 @@ app.post('/student-submission-send/', (req, res) => {
     Object.values(selected_course_per_student)[hw_number][1] = new_link
     DB.sync(); //store the home works links in Data Base.
 })
- */
 
 app.get('/',(req,res)=>{
     res.send('Hello, Dani!')
