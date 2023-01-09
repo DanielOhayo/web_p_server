@@ -3,10 +3,12 @@ const app = express();
 const port = 8080 //port for server.
 const cors = require("cors");  //using package - cors.
 const JSONdb = require('simple-json-db'); //using data_base json.
-const DB = new JSONdb("DB.json"); //define new DB.
+const DB = new JSONdb("public/DB.json"); //define new DB.
 
 app.use(cors());
 app.use(express.static('client'))
+app.use(express.static('public'))
+
 app.use(express.json())
 
 //Login Queries:
